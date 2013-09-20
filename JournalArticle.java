@@ -29,4 +29,8 @@ public class JournalArticle extends Paper
 		setPageRange(newVolumeIssuePageRange.split(":")[1]);
 		setDOI(newDOI);
 	}
+	
+	public String getVolumeIssue() {
+		return volumeIssue;
+	}
 }
