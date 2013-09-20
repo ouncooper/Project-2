@@ -9,23 +9,24 @@ public class JournalArticle extends Paper
 	{
 		setName(newName);
 		setName(newAuthors);
-		title = newTitle;
-		serialTitle = newSerialTitle;
-		date = newDate;
+		setTitle(newTitle);
+		setSerialTitle(newSerialTitle);
+		setDate(newDate);
 		volumeIssue = newVolumeIssuePageRange.split(":")[0];
-		pageRange = newVolumeIssuePageRange.split(":")[1];
-		DOI = null;
+		setPageRange(newVolumeIssuePageRange.split(":")[1]);
+		setDOI(null);
 	}
 	
 	public JournalArticle(String newName, String newAuthors, String newTitle, String newSerialTitle, String newDate, String newVolumeIssuePageRange, String newDOI)
 	{
 		setName(newName);
 		setAuthors(newAuthors);
-		title = newTitle;
-		serialTitle = newSerialTitle;
-		date = newDate;
+		setTitle(newTitle);
+		setSerialTitle(newSerialTitle);
+		setDate(newDate);
+		System.out.println(newVolumeIssuePageRange);
 		volumeIssue = newVolumeIssuePageRange.split(":")[0];
-		pageRange = newVolumeIssuePageRange.split(":")[1];
-		DOI = newDOI;
+		setPageRange(newVolumeIssuePageRange.split(":")[1]);
+		setDOI(newDOI);
 	}
 }
