@@ -12,6 +12,7 @@ public class SortTest {
 	public void test() throws IOException {
 		PaperCollection testCollection = new PaperCollection("filename");
 		
+		//Not sure what expected should be since sorting methods not implemented yet
 		testCollection.Sort("BI");
 		Assert.assertEquals("expected", testCollection.toString());
 		testCollection.Sort("AN");
