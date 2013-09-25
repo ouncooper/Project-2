@@ -1,5 +1,6 @@
 public class JournalArticle extends Paper
 {
+	/* A variable to store the volume and issue of the article. */
 	private String volumeIssue;
 	
 	/**
@@ -61,6 +62,9 @@ public class JournalArticle extends Paper
 		return volumeIssue;
 	}
 	
+	/**
+	 * Converts the object to a string separated by "|"
+	 */
 	public String toString()
 	{
 		return getName() + "|";
