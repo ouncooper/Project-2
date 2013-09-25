@@ -11,7 +11,7 @@ public class FileReadTest {
 		String filepath = "filepath";
 		PaperCollection testCollection = new PaperCollection(filepath);
 		
-		assert.equals(testCollection.size(), 4);
+		Assert.assertEquals(testCollection.size(), 4);
 	}
 
 }
