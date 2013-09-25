@@ -11,6 +11,9 @@ public abstract class Paper implements Comparable<Paper>
 	
 	public Paper() {}
 	
+	/**
+	 * Compares one paper to another lexicographically.
+	 */
 	public int compareTo(Paper otherPaper)
 	{
 		return 0;

@@ -3,34 +3,62 @@ public class JournalArticle extends Paper
 {
 	private String volumeIssue;
 	
+	/**
+	 * Default constructor for the class.
+	 */
 	public JournalArticle() {}
 	
-	public JournalArticle(String newName, String newAuthors, String newTitle, String newSerialTitle, String newDate, String newVolumeIssuePageRange)
+	/**
+	 * Inherits from the Paper class.
+	 * Constructs the object with no DOI given.
+	 * @param newName Name of the paper ("Journal Article").
+	 * @param newAuthors Authors of the paper in the format Last, First Middle; Last, First Middle; etc.
+	 * @param newTitle Title of the paper.
+	 * @param newSerialTitle Serial title of the paper.
+	 * @param newDate Date the paper was published.
+	 * @param newVolumeIssuePageRange Volume, issue, and page range specified in the file.  Split into two variables.
+	 **/
+	public JournalArticle(String newName, String newAuthors, String newTitle, String newSerialTitle, String newVolumeIssuePageRange,  String newDate)
 	{
 		setName(newName);
 		setName(newAuthors);
 		setTitle(newTitle);
 		setSerialTitle(newSerialTitle);
-		setDate(newDate);
 		volumeIssue = newVolumeIssuePageRange.split(":")[0];
 		setPageRange(newVolumeIssuePageRange.split(":")[1]);
+		setDate(newDate);
 		setDOI(null);
 	}
 	
-	public JournalArticle(String newName, String newAuthors, String newTitle, String newSerialTitle, String newDate, String newVolumeIssuePageRange, String newDOI)
+	/**
+	 * Inherits from the Paper class.
+	 * Preferred constructor for the object with a DOI given in the parameters.  
+	 * @param newName Name of the paper ("Journal Article").
+	 * @param newAuthors Authors of the paper in the format Last, First Middle; Last, First Middle; etc.
+	 * @param newTitle Title of the paper.
+	 * @param newSerialTitle Serial title of the paper.
+	 * @param newDate Date the paper was published.
+	 * @param newVolumeIssuePageRange Volume, issue, and page range specified in the file.  Split into two variables.
+	 * @param newDOI I forget what this stands for.
+	 **/
+	public JournalArticle(String newName, String newAuthors, String newTitle, String newSerialTitle, String newVolumeIssuePageRange, String newDate, String newDOI)
 	{
 		setName(newName);
 		setAuthors(newAuthors);
 		setTitle(newTitle);
 		setSerialTitle(newSerialTitle);
-		setDate(newDate);
-		System.out.println(newVolumeIssuePageRange);
 		volumeIssue = newVolumeIssuePageRange.split(":")[0];
 		setPageRange(newVolumeIssuePageRange.split(":")[1]);
+		setDate(newDate);
 		setDOI(newDOI);
 	}
 	
 	public String getVolumeIssue() {
 		return volumeIssue;
+	}
+	
+	public String toString()
+	{
+		return getName() + "|";
 	}
 }
