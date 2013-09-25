@@ -12,28 +12,29 @@ import org.junit.Test;
 public class ScreenPrintTest {
 
 	public void test() throws IOException {
-		String fileToOpen = "filename";
-		String savedFile = "filename";
+		String fileToOpen = "papers.txt";
+		String savedFile = "testexport.txt";
 		
 		//Print to file
 		PaperCollection testCollection = new PaperCollection(fileToOpen);
 		testCollection.printToFile(savedFile);
 		
-		//Open the file
+		//Open both files
 		//Make a file reader
-		FileReader file = new FileReader(savedFile);
+		FileReader fileA = new FileReader(savedFile);
+		FileReader fileB = new FileReader(fileToOpen);
 		//Make a buffered reader from the file reader
-		BufferedReader buffer = new BufferedReader(file);
+		BufferedReader bufferA = new BufferedReader(fileA);
+		BufferedReader bufferB = new BufferedReader(fileB);
 		
-		//Check to see if the expected string matches what the file reads
-		Assert.assertEquals("expected", buffer.readLine());
-		Assert.assertEquals("expected", buffer.readLine());
-		Assert.assertEquals("expected", buffer.readLine());
-		Assert.assertEquals("expected", buffer.readLine());
-		
+		//Check to see if the files are equal by comparing each line
+		while(bufferB.ready()){
+			Assert.assertEquals(bufferB.readLine(), bufferA.readLine());
+		}
 		//Close buffer to avoid memory leak
-		buffer.close();
-
+		bufferA.close();
+		bufferB.close();
+		
 	}
 
 }
