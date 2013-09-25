@@ -68,17 +68,29 @@ public class PaperCollection {
 		
 	}
 	
+	/**
+	 * Prints the data in the collection to a file on the drive
+	 * @param filepath Where you want to print the file to
+	 */
 	public void printToFile(String filepath)
 	{
 		//Loop through each element in the list, print back to a file
 		//Should be able to read that new file in if done correctly
 	}
 	
+	/**
+	 * Prints the data in the collection to the screen for the user to view
+	 */
 	public void printToScreen()
 	{
 		//Same as file, but to screen, not a file.
 	}
 	
+	/**
+	 * Searches the collection for a keyword.
+	 * @param searchCriteria The search query
+	 * @return A string containing the results of the search
+	 */
 	public String search(String searchCriteria)
 	{
 		//Similar to sort in structure
