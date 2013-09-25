@@ -7,7 +7,7 @@ public class FileReadTest {
 
 	public void test() {
 		//Filename containing exactly 4 test papers
-		String filepath = "filepath";
+		String filepath = "papers.txt";
 
 		PaperCollection testCollection = null;
 		try {
