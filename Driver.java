@@ -6,7 +6,7 @@ import java.io.IOException;
  * September 25, 2013
  * <P>
  * This class implements a program that will store, read, and write an ADT of academic papers.
- * I'm not sure what more I have to add.
+ * I'm not sure what more I have to add.	
  * </P>
  * @author
  * @version 0.1

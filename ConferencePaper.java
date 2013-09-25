@@ -38,7 +38,7 @@ public class ConferencePaper extends Paper
 	 * @param newSerialTitle Serial title of the paper.
 	 * @param newDate Date the paper was published.
 	 * @param newPageRange Page range specified in the file.
-	 * @param newDOI I forget what this stands for.
+	 * @param newDOI Digital Object Identifier for the paper.
 	 */
 	public ConferencePaper(String newName, String newAuthors, String newTitle, String newSerialTitle, String newDate, String newPageRange, String newDOI)
 	{
