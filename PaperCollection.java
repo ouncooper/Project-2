@@ -87,4 +87,12 @@ public class PaperCollection {
 		//Wildcards cannot be used unless given a category?  Or just print all the things in a set (because sets).
 		return "";
 	}
+
+	/**
+	 * Gets the size of the list that contains the papers.
+	 * @return The size of the arrayList that the papers are stored in.
+	 */
+	public int size() {
+		return paperCollection.size();
+	}
 }

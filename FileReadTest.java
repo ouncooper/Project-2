@@ -1,4 +1,7 @@
-import static org.junit.Assert.*;
+
+import java.io.IOException;
+
+import junit.framework.Assert;
 
 import org.junit.Test;
 
@@ -7,7 +10,16 @@ public class FileReadTest {
 
 	@Test
 	public void test() {
-		fail("Not yet implemented.");
-	}
-
+		//Filename containing 4 test papers
+		String filepath = "filepath";
+		PaperCollection testCollection = null;
+		try {
+			testCollection = new PaperCollection(filepath);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		Assert.assertEquals(testCollection.size(), 4);
+	}	
 }
