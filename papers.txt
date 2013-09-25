@@ -1,0 +1,26 @@
+Conference Paper
+AuthorLastName1, AuthorFirstName1; AuthorLastName2, AuthorFirstName2
+PaperName1
+SerialTitle1
+137-144
+July 2012
+http://dx.doi.org/10.7551/978-0-262-31050-5-ch020
+Journal Article
+AuthorLastName3, AuthorFirstName3; AuthorLastName4, AuthorFirstName4
+PaperName2
+SerialTitle2
+58(9):1076-1084
+September 2010
+Conference Paper
+AuthorLastName5, AuthorFirstName5; AuthorLastName6, AuthorFirstName6
+PaperName3
+SerialTitle3
+111-185
+March 2012
+http://dx.doi.org/10.7551/978-0-262-31050-5-ch020
+Journal Article
+AuthorLastName7, AuthorFirstName7; AuthorLastName8, AuthorFirstName8
+PaperName4
+SerialTitle4
+30(2):115-634
+October 2010
