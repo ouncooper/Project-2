@@ -51,7 +51,7 @@ public class ConferencePaper extends Paper
 	}
 	
 	/**
-	 * 
+	 * Converts the object to a string separated by "|"
 	 */
 	public String toString()
 	{
