@@ -5,10 +5,9 @@ import java.io.IOException;
  * CS 2334, Section 012
  * September 25, 2013
  * <P>
- * This class implements a program that will store, read, and write an ADT of academic papers.
- * I'm not sure what more I have to add.	
+ * This class implements a program that will store, read, and write an ADT of academic papers.	
  * </P>
- * @author
+ * @author Nicholas Cooper and Connor Taylor
  * @version 0.1
  */
 public class Driver
@@ -23,7 +22,7 @@ public class Driver
 	{
 		PaperCollection list;
 		try {
-			list = new PaperCollection("/Users/7thace/Desktop/papers.txt");
+			list = new PaperCollection("papers.txt");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
