@@ -1,4 +1,3 @@
-
 public class ConferencePaper extends Paper
 {
 	/**
@@ -51,6 +50,9 @@ public class ConferencePaper extends Paper
 		setDOI(newDOI);
 	}
 	
+	/**
+	 * 
+	 */
 	public String toString()
 	{
 		return getName() + "|";
