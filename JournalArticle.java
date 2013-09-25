@@ -55,7 +55,7 @@ public class JournalArticle extends Paper
 	
 	/**
 	 * Gets the volume and issue of the Journal article
-	 * @returns a string containing the volume and issue in the format "volume(issue)"
+	 * @return a string containing the volume and issue in the format "volume(issue)"
 	 */
 	public String getVolumeIssue() {
 		return volumeIssue;
