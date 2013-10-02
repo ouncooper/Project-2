@@ -1,9 +1,5 @@
 public class ConferencePaper extends Paper
 {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -9206279416365032383L;
 
 	/**
 	 * Default constructor for the class.

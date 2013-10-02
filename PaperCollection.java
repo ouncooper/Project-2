@@ -48,7 +48,7 @@ public class PaperCollection {
 				line = br.readLine();
 				if (line == null) //End of file, break from the while loop since it's difficult to conditional this.
 					break;
-			} while (!(line.equalsIgnoreCase("Journal Article") || line.equalsIgnoreCase("Conference Paper"))); //Detection of a new paper.
+			} while (!(line.equalsIgnoreCase(""))); //Detection of a new paper.
 			if (paperInfo[0].equalsIgnoreCase("Journal Article")) //Create the appropriate constructor
 				paperCollection.add(new JournalArticle(paperInfo[0], paperInfo[1], paperInfo[2], paperInfo[3], paperInfo[4], paperInfo[5], paperInfo[6]));
 			else if (paperInfo[0].equalsIgnoreCase("Conference Paper"))
@@ -56,6 +56,7 @@ public class PaperCollection {
 			else System.out.println("There's a major problem!"); //Should never be reached or we have a problem.
 			paperInfo = new String[7]; //Reset the information arrays
 			i = 0;
+			line = br.readLine();
 		}
 	}
 	

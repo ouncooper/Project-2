@@ -1,9 +1,5 @@
 public class JournalArticle extends Paper
 {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1394676353180907545L;
 	/* A variable to store the volume and issue of the article. */
 	private String volumeIssue;
 	
