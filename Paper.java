@@ -35,7 +35,8 @@ public abstract class Paper implements Comparable<Paper>, Serializable
 		switch (sortSearchCriteria)
 		{
 		case "BI":
-			offset = compare(otherPaper, 2);
+			sortSearchCriteria = "AN";
+			compareTo(otherPaper);
 			break;
 		case "AN":
 			offset = compare(otherPaper, 1);
