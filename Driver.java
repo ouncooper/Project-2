@@ -51,8 +51,8 @@ public class Driver
 				list.Sort("PT");
 				break;
 			case "ST":
-				System.out.println("Sorting by Paper Title.");
-				list.Sort("PT");
+				System.out.println("Sorting by Serial Title.");
+				list.Sort("ST");
 				break;
 			case "CH":
 				System.out.println("Sorting Chronologically.");

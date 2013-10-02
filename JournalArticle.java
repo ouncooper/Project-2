@@ -71,6 +71,6 @@ public class JournalArticle extends Paper
 	 */
 	public String toString()
 	{
-		return getName() + " \" " + getAuthors() + " \" " + getTitle() + " \" " + getSerialTitle() + " \" " + getVolumeIssue() + ":" + getPageRange() + " \" " + getDate() + " \" " + getDOI();
+		return getName() + " // " + getAuthors() + " // " + getTitle() + " // " + getSerialTitle() + " // " + getVolumeIssue() + ":" + getPageRange() + " // " + getDate() + " // " + getDOI();
 	}
 }

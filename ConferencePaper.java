@@ -21,7 +21,7 @@ public class ConferencePaper extends Paper
 	 * @param newDate Date the paper was published.
 	 * @param newPageRange Page range specified in the file.
 	 */
-	public ConferencePaper(String newName, String newAuthors, String newTitle, String newSerialTitle, String newDate, String newPageRange)
+	public ConferencePaper(String newName, String newAuthors, String newTitle, String newSerialTitle, String newPageRange, String newDate)
 	{
 		setName(newName);
 		setAuthors(newAuthors);
@@ -44,7 +44,7 @@ public class ConferencePaper extends Paper
 	 * @param newPageRange Page range specified in the file.
 	 * @param newDOI Digital Object Identifier for the paper.
 	 */
-	public ConferencePaper(String newName, String newAuthors, String newTitle, String newSerialTitle, String newDate, String newPageRange, String newDOI)
+	public ConferencePaper(String newName, String newAuthors, String newTitle, String newSerialTitle, String newPageRange, String newDate,  String newDOI)
 	{
 		setName(newName);
 		setAuthors(newAuthors);
@@ -60,11 +60,6 @@ public class ConferencePaper extends Paper
 	 */
 	public String toString()
 	{
-		return getName() + " \" " + getAuthors() + " \" " + getTitle() + " \" " + getSerialTitle() + " \" " + getPageRange() + " \" " + getDate() + " \" " + getDOI();
+		return getName() + " // " + getAuthors() + " // " + getTitle() + " // " + getSerialTitle() + " // " + getPageRange() + " // " + getDate() + " // " + getDOI();
 	}
-	/*
-	public String[] toArray()
-	{
-		return new String[7];
-	}*/
 }

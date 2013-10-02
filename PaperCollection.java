@@ -5,6 +5,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 
 
 public class PaperCollection {
@@ -65,10 +67,17 @@ public class PaperCollection {
 	 */
 	public void Sort(String method)
 	{
-		switch (method.toUpperCase())
+		Paper.setSortSearchCriteria(method.toUpperCase());
+		if (method.equalsIgnoreCase("R"))
 		{
-			
+			long seed = System.nanoTime();
+			Collections.shuffle(paperCollection, new Random(seed));
 		}
+		else
+			Collections.sort(paperCollection);
+
+		for(Paper eachPaper:paperCollection)
+			System.out.println(eachPaper);
 		//Switch to choose how to sort (which criteria)
 		//Methods for individual sorts?
 		//Maybe a .toString on the paper and then sort by a selected index in a split up array.
@@ -100,7 +109,7 @@ public class PaperCollection {
 	public void printToScreen()
 	{
 		for(Paper eachPaper:paperCollection)
-			System.out.println(eachPaper.toString().replace(" \\ ", "\n").replace("null", "") + "\n");
+			System.out.println(eachPaper.toString().replace(" // ", "\n").replace("null", "") + "\n");
 		//Same as file, but to screen, not a file.
 	}
 	
