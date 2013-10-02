@@ -1,26 +1,31 @@
 public abstract class Paper implements Comparable<Paper>
 {	
-	/* A variable to store the name of the paper. Index 0.*/
+	/* A variable to store the name of the paper.*/
 	private String name;
-	/* A variable to store the authors of the paper. Index 1.*/
+	/* A variable to store the authors of the paper.*/
 	private String authors;
-	/* A variable to store the title of the paper. Index 2.*/
+	/* A variable to store the title of the paper.*/
 	private String title;
-	/* A variable to store the serial title of the paper. Index 3.*/
+	/* A variable to store the serial title of the paper.*/
 	private String serialTitle;
-	/* A variable to store the date of publication of the paper. Index 4.*/
+	/* A variable to store the date of publication of the paper.*/
 	private String date;
-	/* A variable to store the pages the paper is on. Index 6.*/
+	/* A variable to store the pages the paper is on.*/
 	private String pageRange;
-	/* A variable to store the digital object identifier of the paper. */
+	/* A variable to store the digital object identifier of the paper.*/
 	private String DOI;
 	
+	/* A variable to store the method of sorting and searching. */
 	private static String sortSearchCriteria;
 	
+	/**
+	 * Default constructor.
+	 */
 	public Paper() {}
 	
 	/**
 	 * Compares one paper to another by the given criteria.
+	 * @param otherPaper The paper you want to compare against.
 	 */
 	public int compareTo(Paper otherPaper)
 	{
@@ -56,13 +61,23 @@ public abstract class Paper implements Comparable<Paper>
 		return offset;
 	}
 	
+	/**
+	 * Used by the compareTo method to simplify comparing papers
+	 * @param otherPaper The paper you want to compare to.
+	 * @param index ************************
+	 * @return
+	 */
 	public int compare(Paper otherPaper, int index)
 	{
 		String otherPaperString = otherPaper.toString();
 		String thisPaperString = this.toString();
 		return thisPaperString.split(" // ")[index].compareToIgnoreCase(otherPaperString.split(" // ")[index]);
 	}
-		
+	
+	/**
+	 * Sets the search criteria
+	 * @param method The search criteria ("BI", "AN", "PT", "ST", "CH", "R")
+	 */
 	public static void setSortSearchCriteria(String method)
 	{
 		sortSearchCriteria = method;
