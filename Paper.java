@@ -1,5 +1,11 @@
-public abstract class Paper implements Comparable<Paper>
+import java.io.Serializable;
+
+public abstract class Paper implements Comparable<Paper>, Serializable
 {	
+	/**
+	 * Serialized Value
+	 */
+	private static final long serialVersionUID = -2027388440523486423L;
 	/* A variable to store the name of the paper. */
 	private String name;
 	/* A variable to store the authors of the paper. */

@@ -1,7 +1,9 @@
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 
@@ -73,11 +75,20 @@ public class PaperCollection {
 	/**
 	 * Prints the data in the collection to a file on the drive
 	 * @param filepath Where you want to print the file to
+	 * @throws IOException Error in reading the file, in our out.
 	 */
-	public void printToFile(String filepath)
+	public void printToFile(String filepath) throws IOException
 	{
-		//Loop through each element in the list, print back to a file
-		//Should be able to read that new file in if done correctly
+		//Create a file to put the objects
+		FileOutputStream outputFile = new FileOutputStream(filepath);
+		ObjectOutputStream outputStream = new ObjectOutputStream(outputFile);
+
+		//Go through each paper in the collection
+		for(Paper eachPaper: paperCollection)
+		outputStream.writeObject(eachPaper);
+
+		//Close the stream to prevent a memory leak
+		outputStream.close();
 	}
 	
 	/**
@@ -85,6 +96,8 @@ public class PaperCollection {
 	 */
 	public void printToScreen()
 	{
+		for(Paper eachPaper:paperCollection)
+			System.out.println(eachPaper);
 		//Same as file, but to screen, not a file.
 	}
 	
@@ -95,10 +108,6 @@ public class PaperCollection {
 	 */
 	public String search(String searchCriteria)
 	{
-		//Similar to sort in structure
-		//Loop through all search possibilities (author name, titles, etc.), return best one.
-		//Might use .toString and see what sticks?  WHO KNOWS :D Might do it to check if it exists at all
-		//Wildcards cannot be used unless given a category?  Or just print all the things in a set (because sets).
 		return "";
 	}
 

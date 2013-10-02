@@ -1,16 +1,13 @@
 import java.io.IOException;
-
+import static org.junit.Assert.*;
 import junit.framework.Assert;
-
-import org.junit.Test;
 
 
 public class FileReadTest {
 
-	@Test
 	public void test() {
-		//Filename containing 4 test papers
-		String filepath = "filepath";
+		//Filename containing exactly 4 test papers
+		String filepath = "papers.txt";
 
 		PaperCollection testCollection = null;
 		try {
@@ -19,6 +16,8 @@ public class FileReadTest {
 			e.printStackTrace();
 		}
 		
+		//See if there are exactly 4 papers in the collection
 		Assert.assertEquals(testCollection.size(), 4);
+		
 	}	
 }

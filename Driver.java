@@ -22,7 +22,7 @@ public class Driver
 	 */
 	public static void main(String[] args) throws IOException
 	{
-		PaperCollection list;
+		PaperCollection list = null;
 		try {
 			list = new PaperCollection("/Users/7thace/desktop/papers.txt");
 		} catch (IOException e) {
@@ -36,14 +36,54 @@ public class Driver
 			System.out.print("Please input a command: ");
 			command = inputReader.readLine();
 			
-			switch (command) //Because java 7 allows switches on strings
+			switch (command.toUpperCase()) //Because java 7 allows switches on strings
 			{
-			
+			case "BI":
+				System.out.println("Sorting Bibliographically.");
+				list.Sort("BI");
+				break;
+			case "AN":
+				System.out.println("Sorting by Author's name.");
+				list.Sort("AN");
+				break;
+			case "PT":
+				System.out.println("Sorting by Paper Title.");
+				list.Sort("PT");
+				break;
+			case "ST":
+				System.out.println("Sorting by Paper Title.");
+				list.Sort("PT");
+				break;
+			case "CH":
+				System.out.println("Sorting Chronologically.");
+				list.Sort("CH");
+				break;
+			case "R":
+				System.out.println("Sorting Randomly.");
+				list.Sort("R");
+				break;
+			case "PS":
+				list.printToScreen();
+				break;
+			case "PF":
+				System.out.print("Please input an output filepath: ");
+				list.printToFile(inputReader.readLine());
+				break;
+			case "S":
+				System.out.println("Please input a search critera: ");
+				list.search(inputReader.readLine());
+				break;
+			case "E":
+				//This is the exit command, so nothing will be done
+				System.out.println("Thanks! Exiting...");
+				break;
+			default:
+				System.out.println("Please choose a valid operation.");
+				break;
 			}
 			//do the work
-		} while (command.equalsIgnoreCase("e"));
-		
-		System.out.println("Thanks! Exiting...");
+		} while (!command.equalsIgnoreCase("E"));
+
 		System.exit(0);
 	}
 }
