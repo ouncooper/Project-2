@@ -28,7 +28,7 @@ public class PaperCollection {
 	{
 		FileReader fr = null;
 		String line = "";
-		
+
 		try {
 			fr = new FileReader(filepath);
 		} catch (FileNotFoundException e) {
@@ -37,23 +37,33 @@ public class PaperCollection {
 
 		BufferedReader br = new BufferedReader(fr);
 
-		line = br.readLine(); //Initial line grab
-		String[] paperInfo = new String[7]; //Holds the info for the current paper. Will be used in the construction of a new paper object.
+		//Initial line grab
+		line = br.readLine(); 
+		
+		//Holds the info for the current paper. Will be used in the construction of a new paper object.
+		String[] paperInfo = new String[7]; 
 		int i = 0;
 
-		while (line != null) { //Until the end of the file
-			do { //Loops until a new magazine is found.
-				paperInfo[i] = line;
-				i++;
+		//Until the end of the file
+		while (line != null) {
+			//Loops until a new magazine is found.
+			do { 
+				paperInfo[i++] = line;
 				line = br.readLine();
-				if (line == null) //End of file, break from the while loop since it's difficult to conditional this.
+				
+				//End of file, break from the while loop since it's difficult to conditional this.
+				if (line == null) 
 					break;
 			} while (!(line.equalsIgnoreCase(""))); //Detection of a new paper.
-			if (paperInfo[0].equalsIgnoreCase("Journal Article")) //Create the appropriate constructor
+			
+			//Create the appropriate constructor
+			if (paperInfo[0].equalsIgnoreCase("Journal Article")) 
 				paperCollection.add(new JournalArticle(paperInfo[0], paperInfo[1], paperInfo[2], paperInfo[3], paperInfo[4], paperInfo[5], paperInfo[6]));
 			else if (paperInfo[0].equalsIgnoreCase("Conference Paper"))
 				paperCollection.add(new ConferencePaper(paperInfo[0], paperInfo[1], paperInfo[2], paperInfo[3], paperInfo[4], paperInfo[5], paperInfo[6]));
-			else System.out.println("There's a major problem!"); //Should never be reached or we have a problem.
+			else System.out.println("Improper Formatting Detected - \"Conference Paper\" or \"Journal Article\" expected."); //Should never be reached or we have a problem.
+			
+			
 			paperInfo = new String[7]; //Reset the information arrays
 			i = 0;
 			line = br.readLine();
