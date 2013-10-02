@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 /**
  * Project #2
  * CS 2334, Section 012
- * September 25, 2013
+ * October 2, 2013
  * <P>
  * This class implements a program that will store, read, and write an ADT of academic papers.	
  * </P>
@@ -40,27 +40,27 @@ public class Driver
 			{
 			case "BI":
 				System.out.println("Sorting Bibliographically.");
-				list.Sort("BI");
+				list.sort("BI");
 				break;
 			case "AN":
 				System.out.println("Sorting by Author's name.");
-				list.Sort("AN");
+				list.sort("AN");
 				break;
 			case "PT":
 				System.out.println("Sorting by Paper Title.");
-				list.Sort("PT");
+				list.sort("PT");
 				break;
 			case "ST":
 				System.out.println("Sorting by Serial Title.");
-				list.Sort("ST");
+				list.sort("ST");
 				break;
 			case "CH":
 				System.out.println("Sorting Chronologically.");
-				list.Sort("CH");
+				list.sort("CH");
 				break;
 			case "R":
 				System.out.println("Sorting Randomly.");
-				list.Sort("R");
+				list.sort("R");
 				break;
 			case "PS":
 				list.printToScreen();
@@ -70,8 +70,13 @@ public class Driver
 				list.printToFile(inputReader.readLine());
 				break;
 			case "S":
-				System.out.println("Please input a search critera: ");
-				list.search(inputReader.readLine());
+				System.out.println("Please input a title to search for: ");
+				String title = inputReader.readLine();
+				int index = list.search(title);
+				if (index == -1)
+					System.out.println("The title " + title + " was not found.");
+				else
+					System.out.println("The title " + title + " was found at index " + index + ".");
 				break;
 			case "E":
 				//This is the exit command, so nothing will be done

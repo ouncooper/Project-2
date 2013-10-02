@@ -28,7 +28,7 @@ public class PaperCollection {
 	{
 		FileReader fr = null;
 		String line = "";
-
+		
 		try {
 			fr = new FileReader(filepath);
 		} catch (FileNotFoundException e) {
@@ -37,33 +37,22 @@ public class PaperCollection {
 
 		BufferedReader br = new BufferedReader(fr);
 
-		//Initial line grab
-		line = br.readLine(); 
-		
-		//Holds the info for the current paper. Will be used in the construction of a new paper object.
-		String[] paperInfo = new String[7]; 
+		line = br.readLine(); //Initial line grab
+		String[] paperInfo = new String[7]; //Holds the info for the current paper. Will be used in the construction of a new paper object.
 		int i = 0;
 
-		//Until the end of the file
-		while (line != null) {
-			//Loops until a new magazine is found.
-			do { 
+		while (line != null) { //Until the end of the file
+			do { //Loops until a new magazine is found.
 				paperInfo[i++] = line;
 				line = br.readLine();
-				
-				//End of file, break from the while loop since it's difficult to conditional this.
-				if (line == null) 
+				if (line == null) //End of file, break from the while loop since it's difficult to conditional this.
 					break;
 			} while (!(line.equalsIgnoreCase(""))); //Detection of a new paper.
-			
-			//Create the appropriate constructor
-			if (paperInfo[0].equalsIgnoreCase("Journal Article")) 
+			if (paperInfo[0].equalsIgnoreCase("Journal Article")) //Create the appropriate constructor
 				paperCollection.add(new JournalArticle(paperInfo[0], paperInfo[1], paperInfo[2], paperInfo[3], paperInfo[4], paperInfo[5], paperInfo[6]));
 			else if (paperInfo[0].equalsIgnoreCase("Conference Paper"))
 				paperCollection.add(new ConferencePaper(paperInfo[0], paperInfo[1], paperInfo[2], paperInfo[3], paperInfo[4], paperInfo[5], paperInfo[6]));
-			else System.out.println("Improper Formatting Detected - \"Conference Paper\" or \"Journal Article\" expected."); //Should never be reached or we have a problem.
-			
-			
+			else System.out.println("There's a major problem!"); //Should never be reached or we have a problem.
 			paperInfo = new String[7]; //Reset the information arrays
 			i = 0;
 			line = br.readLine();
@@ -76,23 +65,13 @@ public class PaperCollection {
 	 * May require a few smaller methods, but we'll see in implementation.
 	 * @param method Which element to sort by (ex. BI for bibliographic, AU for author, etc.)
 	 */
-	public void Sort(String method)
+	public void sort(String method)
 	{
-		Paper.setSortSearchCriteria(method.toUpperCase());
+		Paper.setSortCriteria(method.toUpperCase());
 		if (method.equalsIgnoreCase("R"))
-		{
-			long seed = System.nanoTime();
-			Collections.shuffle(paperCollection, new Random(seed));
-		}
+			Collections.shuffle(paperCollection, new Random(System.nanoTime()));
 		else
 			Collections.sort(paperCollection);
-
-		for(Paper eachPaper:paperCollection)
-			System.out.println(eachPaper);
-		//Switch to choose how to sort (which criteria)
-		//Methods for individual sorts?
-		//Maybe a .toString on the paper and then sort by a selected index in a split up array.
-		
 	}
 	
 	/**
@@ -102,19 +81,16 @@ public class PaperCollection {
 	 */
 	public void printToFile(String filepath) throws IOException
 	{
-		//Make a file to print to and open a buffer
-		FileWriter outputFile = new FileWriter(filepath);
-		BufferedWriter bw = new BufferedWriter(outputFile);
-		
-		//Go through each paper in the collection and print it to the file
-		for(Paper eachPaper: paperCollection){
-			bw.write(eachPaper.toString().replace(" // null", "").replace(" // ", "\n"));
-			bw.newLine();
-			bw.newLine();
-		}
-		
-		//Close the buffer
-		bw.close();
+		//Create a file to put the objects
+		FileOutputStream outputFile = new FileOutputStream(filepath);
+		ObjectOutputStream outputStream = new ObjectOutputStream(outputFile);
+
+		//Go through each paper in the collection
+		for(Paper eachPaper: paperCollection)
+		outputStream.writeObject(eachPaper);
+
+		//Close the stream to prevent a memory leak
+		outputStream.close();
 	}
 	
 	/**
@@ -123,8 +99,7 @@ public class PaperCollection {
 	public void printToScreen()
 	{
 		for(Paper eachPaper:paperCollection)
-				System.out.println(eachPaper.toString().replace(" // null", "").replace(" // ", "\n") + "\n");
-		//Same as file, but to screen, not a file.
+			System.out.println(eachPaper.toString().replace(" // null", "").replace(" // ", "\n") + "\n");
 	}
 	
 	/**
@@ -132,9 +107,34 @@ public class PaperCollection {
 	 * @param searchCriteria The search query
 	 * @return A string containing the results of the search
 	 */
-	public String search(String searchCriteria)
+	public int search(String searchTitle)
 	{
-		return "";
+		//Have to be certain the list is sorted.
+		sort("PT");
+		int left  = 0;
+		int right = paperCollection.size() - 1;
+		
+		// While there are elements in the range [left,.., right].
+		while( right - left + 1 > 0) {
+			// Pick the middle point of the range [left, ... , right].
+			
+			int middleIndex = ( left + right ) / 2;
+			String middleElement = paperCollection.get(middleIndex).toString().split(" // ")[2];
+			int comparisonValue = middleElement.compareTo(searchTitle);
+			
+			if (comparisonValue < 0) {
+				left = middleIndex + 1;
+			}
+			else if (comparisonValue > 0) {
+				right = middleIndex - 1;				
+			}
+			else {
+				return middleIndex;
+			}
+		}
+		
+		// If the element was not found.
+		return -1;	
 	}
 
 	/**
