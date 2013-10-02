@@ -92,16 +92,19 @@ public class PaperCollection {
 	 */
 	public void printToFile(String filepath) throws IOException
 	{
-		//Create a file to put the objects
-		FileOutputStream outputFile = new FileOutputStream(filepath);
-		ObjectOutputStream outputStream = new ObjectOutputStream(outputFile);
-
-		//Go through each paper in the collection
-		for(Paper eachPaper: paperCollection)
-		outputStream.writeObject(eachPaper);
-
-		//Close the stream to prevent a memory leak
-		outputStream.close();
+		//Make a file to print to and open a buffer
+		FileWriter outputFile = new FileWriter(filepath);
+		BufferedWriter bw = new BufferedWriter(outputFile);
+		
+		//Go through each paper in the collection and print it to the file
+		for(Paper eachPaper: paperCollection){
+			bw.write(eachPaper.toString().replace(" // null", "").replace(" // ", "\n"));
+			bw.newLine();
+			bw.newLine();
+		}
+		
+		//Close the buffer
+		bw.close();
 	}
 	
 	/**
