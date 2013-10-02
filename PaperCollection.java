@@ -110,7 +110,7 @@ public class PaperCollection {
 	public void printToScreen()
 	{
 		for(Paper eachPaper:paperCollection)
-			System.out.println(eachPaper.toString().replace(" // ", "\n").replace("null", "") + "\n");
+				System.out.println(eachPaper.toString().replace(" // null", "").replace(" // ", "\n") + "\n");
 		//Same as file, but to screen, not a file.
 	}
 	
