@@ -71,11 +71,19 @@ public class PaperCollection {
 	/**
 	 * Prints the data in the collection to a file on the drive
 	 * @param filepath Where you want to print the file to
+	 * @throws IOException 
 	 */
-	public void printToFile(String filepath)
-	{
-		//Loop through each element in the list, print back to a file
-		//Should be able to read that new file in if done correctly
+	public void printToFile(String filepath) throws IOException {
+		//Create a file to put the objects
+		FileOutputStream outputFile = new FileOutputStream(filepath);
+		ObjectOutputStream outputStream = new ObjectOutputStream(outputFile);
+		
+		//Go through each paper in the collection
+		for(Paper eachPaper: paperCollection)
+			outputStream.writeObject(eachPaper);
+		
+		//Close the stream to prevent a memory leak
+		outputStream.close();
 	}
 	
 	/**
