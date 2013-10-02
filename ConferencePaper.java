@@ -1,6 +1,5 @@
 public class ConferencePaper extends Paper
 {
-
 	/**
 	 * Default constructor for the class.
 	 */
@@ -8,30 +7,7 @@ public class ConferencePaper extends Paper
 	
 	/**
 	 * Inherits from the Paper class.
-	 * Constructs the object with no DOI given.
-	 * --Possibly may be removed due to a lack of use since the current method passes a null DOI to the other constructor.
-	 * @param newName Name of the paper ("Conference Paper").
-	 * @param newAuthors Authors of the paper in the format Last, First Middle; Last, First Middle; etc.
-	 * @param newTitle Title of the paper.
-	 * @param newSerialTitle Serial title of the paper.
-	 * @param newDate Date the paper was published.
-	 * @param newPageRange Page range specified in the file.
-	 */
-	public ConferencePaper(String newName, String newAuthors, String newTitle, String newSerialTitle, String newPageRange, String newDate)
-	{
-		setName(newName);
-		setAuthors(newAuthors);
-		setTitle(newTitle);
-		setSerialTitle(newSerialTitle);
-		setPageRange(newPageRange);
-		setDate(newDate);
-		setDOI(null);
-	}
-	
-	
-	/**
-	 * Inherits from the Paper class.
-	 * Preferred constructor for the object with a DOI given in the parameters.  
+	 * Creates a ConferencePaper Object
 	 * @param newName Name of the paper ("Conference Paper").
 	 * @param newAuthors Authors of the paper in the format Last, First Middle; Last, First Middle; etc.
 	 * @param newTitle Title of the paper.
@@ -52,7 +28,7 @@ public class ConferencePaper extends Paper
 	}
 	
 	/**
-	 * Converts the object to a string separated by " \ "
+	 * Converts the object to a string separated by " // "
 	 */
 	public String toString()
 	{
