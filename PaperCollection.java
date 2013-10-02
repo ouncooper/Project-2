@@ -75,6 +75,7 @@ public class PaperCollection {
 	/**
 	 * Prints the data in the collection to a file on the drive
 	 * @param filepath Where you want to print the file to
+<<<<<<< HEAD
 	 * @throws IOException Error in reading the file, in our out.
 	 */
 	public void printToFile(String filepath) throws IOException
@@ -87,6 +88,19 @@ public class PaperCollection {
 		for(Paper eachPaper: paperCollection)
 		outputStream.writeObject(eachPaper);
 
+=======
+	 * @throws IOException 
+	 */
+	public void printToFile(String filepath) throws IOException {
+		//Create a file to put the objects
+		FileOutputStream outputFile = new FileOutputStream(filepath);
+		ObjectOutputStream outputStream = new ObjectOutputStream(outputFile);
+		
+		//Go through each paper in the collection
+		for(Paper eachPaper: paperCollection)
+			outputStream.writeObject(eachPaper);
+		
+>>>>>>> 42975cc82e5d47e3f4569548c0d2eec0397e8213
 		//Close the stream to prevent a memory leak
 		outputStream.close();
 	}
