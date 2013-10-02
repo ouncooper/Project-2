@@ -1,11 +1,18 @@
 public abstract class Paper implements Comparable<Paper>
 {	
+	/* A variable to store the name of the paper. */
 	private String name;
+	/* A variable to store the authors of the paper. */
 	private String authors;
+	/* A variable to store the title of the paper. */
 	private String title;
+	/* A variable to store the serial title of the paper. */
 	private String serialTitle;
+	/* A variable to store the date of publication of the paper. */
 	private String date;
+	/* A variable to store the pages the paper is on. */
 	private String pageRange;
+	/* A variable to store the digital object identifier of the paper. */
 	private String DOI;
 	
 	public Paper() {}
@@ -18,7 +25,6 @@ public abstract class Paper implements Comparable<Paper>
 		return 0;
 	}
 	
-	//Getters and setters
 	/**
 	 * @return the name of the paper
 	 */
@@ -69,7 +75,7 @@ public abstract class Paper implements Comparable<Paper>
 	}
 
 	/**
-	 * @parma the serial title of the paper
+	 * @param the serial title of the paper
 	 */
 	public void setSerialTitle(String serialTitle) {
 		this.serialTitle = serialTitle;

@@ -51,11 +51,11 @@ public class ConferencePaper extends Paper
 	}
 	
 	/**
-	 * Converts the object to a string separated by "|"
+	 * Converts the object to a string separated by " \ "
 	 */
 	public String toString()
 	{
-		return getName() + "|";
+		return getName() + " \" " + getAuthors() + " \" " + getTitle() + " \" " + getSerialTitle() + " \" " + getPageRange() + " \" " + getDate() + " \" " + getDOI();
 	}
 	/*
 	public String[] toArray()

@@ -24,18 +24,19 @@ public class PaperCollection {
 	{
 		FileReader fr = null;
 		String line = "";
+		
 		try {
 			fr = new FileReader(filepath);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		
+
 		BufferedReader br = new BufferedReader(fr);
-		
+
 		line = br.readLine(); //Initial line grab
-		String[] paperInfo = new String[7]; //Holds the info for the current paper.  Will be used in the construction of a new paper object.
+		String[] paperInfo = new String[7]; //Holds the info for the current paper. Will be used in the construction of a new paper object.
 		int i = 0;
-		
+
 		while (line != null) { //Until the end of the file
 			do { //Loops until a new magazine is found.
 				paperInfo[i] = line;
@@ -44,7 +45,7 @@ public class PaperCollection {
 				if (line == null) //End of file, break from the while loop since it's difficult to conditional this.
 					break;
 			} while (!(line.equalsIgnoreCase("Journal Article") || line.equalsIgnoreCase("Conference Paper"))); //Detection of a new paper.
-			if (paperInfo[0].equalsIgnoreCase("Journal Article"))  //Create the appropriate constructor
+			if (paperInfo[0].equalsIgnoreCase("Journal Article")) //Create the appropriate constructor
 				paperCollection.add(new JournalArticle(paperInfo[0], paperInfo[1], paperInfo[2], paperInfo[3], paperInfo[4], paperInfo[5], paperInfo[6]));
 			else if (paperInfo[0].equalsIgnoreCase("Conference Paper"))
 				paperCollection.add(new ConferencePaper(paperInfo[0], paperInfo[1], paperInfo[2], paperInfo[3], paperInfo[4], paperInfo[5], paperInfo[6]));
@@ -62,23 +63,36 @@ public class PaperCollection {
 	 */
 	public void Sort(String method)
 	{
+		
 		//Switch to choose how to sort (which criteria)
 		//Methods for individual sorts?
 		//Maybe a .toString on the paper and then sort by a selected index in a split up array.
 		
 	}
 	
+	/**
+	 * Prints the data in the collection to a file on the drive
+	 * @param filepath Where you want to print the file to
+	 */
 	public void printToFile(String filepath)
 	{
 		//Loop through each element in the list, print back to a file
 		//Should be able to read that new file in if done correctly
 	}
 	
+	/**
+	 * Prints the data in the collection to the screen for the user to view
+	 */
 	public void printToScreen()
 	{
 		//Same as file, but to screen, not a file.
 	}
 	
+	/**
+	 * Searches the collection for a keyword.
+	 * @param searchCriteria The search query
+	 * @return A string containing the results of the search
+	 */
 	public String search(String searchCriteria)
 	{
 		//Similar to sort in structure
