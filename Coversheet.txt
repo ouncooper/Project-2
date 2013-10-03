@@ -1,0 +1,21 @@
+CoverSheet
+
+
+Connor Taylor
+112881355
+
+Nicholas Cooper
+112864749
+
+Who did what:
+Initial UML design: Both
+UML drawing: Connor
+Make Stubcode from UML: Nicholas
+JavaDoc the Stubcode: Both
+Create Junit cases: Connor
+Create test document (papers.txt): Both but Nicholas's was better so we used his
+Fill in methods: Both
+Revise UML drawing: Connor
+Complete Junit cases: Connor
+Make Milestones.txt: Connor
+Fill out table in Milestones.txt: Nicholas
