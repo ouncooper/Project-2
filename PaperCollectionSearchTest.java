@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+import static org.junit.Assert.*;
+>>>>>>> 3bccbd562f69d8aa8cd22e1467e73d9370c37cdb
 import java.io.IOException;
 import junit.framework.Assert;
 
