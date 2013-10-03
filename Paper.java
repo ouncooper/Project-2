@@ -18,7 +18,11 @@ public abstract class Paper implements Comparable<Paper>/*, Comparator<Paper>*/
 	private String DOI;
 	
 	/* A variable to store the method of sorting and searching. */
+<<<<<<< HEAD
 	private static String sortCriteria;
+=======
+	private static String sortSearchCriteria;
+>>>>>>> 72e9109778fb71673212255e9961dbfd12afb9ad
 	
 	/**
 	 * Default constructor.
@@ -80,7 +84,11 @@ public abstract class Paper implements Comparable<Paper>/*, Comparator<Paper>*/
 	 * Sets the search criteria
 	 * @param method The search criteria ("BI", "AN", "PT", "ST", "CH", "R")
 	 */
+<<<<<<< HEAD
 	public static void setSortCriteria(String method)
+=======
+	public static void setSortSearchCriteria(String method)
+>>>>>>> 72e9109778fb71673212255e9961dbfd12afb9ad
 	{
 		sortCriteria = method;
 	}
