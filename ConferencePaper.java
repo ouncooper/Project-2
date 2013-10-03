@@ -1,5 +1,9 @@
-public class ConferencePaper extends Paper
+import java.io.Serializable;
+
+public class ConferencePaper extends Paper implements Serializable
 {
+	private static final long serialVersionUID = 8507820325335680360L;
+
 	/**
 	 * Default constructor for the class.
 	 */

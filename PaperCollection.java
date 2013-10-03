@@ -61,8 +61,6 @@ public class PaperCollection {
 	
 	/**
 	 * Sorts the collection by a certain criteria.
-	 * 
-	 * May require a few smaller methods, but we'll see in implementation.
 	 * @param method Which element to sort by (ex. BI for bibliographic, AU for author, etc.)
 	 */
 	public void sort(String method)
@@ -106,8 +104,8 @@ public class PaperCollection {
 	
 	/**
 	 * Searches the collection for a keyword.
-	 * @param searchCriteria The search query
-	 * @return A string containing the results of the search
+	 * @param searchCriteria The search query.
+	 * @return The corresponding paper to the title or null if it does not exist.
 	 */
 	public Paper search(String searchTitle)
 	{
@@ -146,5 +144,16 @@ public class PaperCollection {
 	 */
 	public int size() {
 		return paperCollection.size();
+	}
+	
+	/**
+	 * Converts the collection to a string
+	 * @return A string representing the collection
+	 */
+	public String toString(){
+		String result = "";
+		for(Paper eachPaper: paperCollection)
+			result += eachPaper.toString();
+		return result;
 	}
 }

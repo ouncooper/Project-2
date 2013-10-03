@@ -1,5 +1,9 @@
-public class JournalArticle extends Paper
+import java.io.Serializable;
+
+public class JournalArticle extends Paper implements Serializable
 {
+	private static final long serialVersionUID = 3324219143415691342L;
+	
 	/* A variable to store the volume and issue of the article. */
 	private String volumeIssue;
 	
