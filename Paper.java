@@ -1,4 +1,4 @@
-public abstract class Paper implements Comparable<Paper>/*, Comparator<Paper>*/
+public abstract class Paper implements Comparable<Paper>
 {	
 	/* A variable to store the name of the paper.*/
 	private String name;
@@ -69,8 +69,8 @@ public abstract class Paper implements Comparable<Paper>/*, Comparator<Paper>*/
 	/**
 	 * Used by the compareTo method to simplify comparing papers
 	 * @param otherPaper The paper you want to compare to.
-	 * @param index ************************
-	 * @return
+	 * @param index The line of the description of the paper you want to compare
+	 * @return lexographical difference between the two papers
 	 */
 	public int compare(Paper otherPaper, int index)
 	{
