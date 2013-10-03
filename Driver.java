@@ -29,7 +29,7 @@ public class Driver
 		String filepath = inputReader.readLine();
 		
 		try {
-			list = new PaperCollection(filepath + "/papers.txt");
+			list = new PaperCollection(filepath + "papers.txt");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
