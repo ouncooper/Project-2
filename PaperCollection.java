@@ -1,9 +1,9 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
@@ -81,16 +81,18 @@ public class PaperCollection {
 	 */
 	public void printToFile(String filepath) throws IOException
 	{
-		//Create a file to put the objects
-		FileOutputStream outputFile = new FileOutputStream(filepath);
-		ObjectOutputStream outputStream = new ObjectOutputStream(outputFile);
+		//Make a file to print to and open a buffer
+		FileWriter outputFile = new FileWriter(filepath);
+		BufferedWriter bw = new BufferedWriter(outputFile);
 
-		//Go through each paper in the collection
-		for(Paper eachPaper: paperCollection)
-		outputStream.writeObject(eachPaper);
-
-		//Close the stream to prevent a memory leak
-		outputStream.close();
+		//Go through each paper in the collection and print it to the file
+		for(Paper eachPaper: paperCollection){
+			bw.write(eachPaper.toString().replace(" // null", "").replace(" // ", "\n"));
+			bw.newLine();
+			bw.newLine();
+		}
+		//Close the buffer
+		bw.close(); 
 	}
 	
 	/**
