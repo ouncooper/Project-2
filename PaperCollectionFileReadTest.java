@@ -1,10 +1,10 @@
 import java.io.IOException;
-import static org.junit.Assert.*;
 import junit.framework.Assert;
+import org.junit.Test;
 
+public class PaperCollectionFileReadTest {
 
-public class FileReadTest {
-
+	@Test
 	public void test() {
 		//Filename containing exactly 4 test papers
 		String filepath = "papers.txt";

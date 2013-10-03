@@ -1,16 +1,12 @@
-import static org.junit.Assert.*;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-
 import junit.framework.Assert;
-
 import org.junit.Test;
 
 
-public class ScreenPrintTest {
-
+public class PaperCollectionPrintTest {
+	@Test
 	public void test() throws IOException {
 		String fileToOpen = "papers.txt";
 		String savedFile = "testexport.txt";

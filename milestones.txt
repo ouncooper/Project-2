@@ -1,0 +1,32 @@
+Milestones.txt
+
+Connor Taylor & Nicholas Cooper
+Project 2
+October 2, 2013
+
+1. [MET] Use keyboard input to get information from the user.
+		command = inputReader.readLine(); gets the input from the reader
+2. [MET] Use text file I/O to read and write text files.
+		Used FileWriter and BufferedWriter to write the file. Used FileReader and BufferedReader to read the file.
+3. [MET] Create classes to store data on various types of scholarly publications.
+		Created the Paper Abstract Class and JournalArticle and ConferencePaper classes to store the appropriate data
+4. [?] Implement both the Comparable and Comparator interfaces to compare one scholarly paper to another.
+		
+5. [MET] Use a List to store, retrieve, and display data related to scholarly papers.
+		created an ArrayList of Paper objects and stored it as a PaperCollection object.
+		
+				1.				2.				3.				4.				5.
+Title:	|				|				|				|				|				|
+--------+---------------+---------------+---------------+---------------+---------------+
+BI		|				|				|				|				|				|
+AN		|				|				|				|				|				|
+PT		|				|				|				|				|				|
+ST		|				|				|				|				|				|
+CH		|				|				|				|				|				|
+R		|				|				|				|				|				|
+
+Use Binary search for papers that have been sorted by Bibliographic, Paper Title, and Serial Title because the collection has a defined order and unique entries. 
+Use linear search for papers that have been sorted by author name, and chronological because although they have a defined order, there may be multiple papers with the same authors, or date and binary search can only find one entry.
+Use linear search for papers that have been sorted randomly because they do not have a defined order.
+
+6. [?] Use the sort() and binarySearch() methods from the Collections class to sort and search for data
