@@ -147,4 +147,15 @@ public class PaperCollection {
 	public int size() {
 		return paperCollection.size();
 	}
+	
+	/**
+	 * Converts the collection to a string
+	 * @return A string representing the collection
+	 */
+	public String toString(){
+		String result = "";
+		for(Paper eachPaper: paperCollection)
+			result += eachPaper.toString();
+		return result;
+	}
 }
