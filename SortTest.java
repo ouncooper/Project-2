@@ -13,17 +13,17 @@ public class SortTest {
 		PaperCollection testCollection = new PaperCollection("filename");
 		
 		//Not sure what expected should be since sorting methods not implemented yet
-		testCollection.Sort("BI");
+		testCollection.sort("BI");
 		Assert.assertEquals("expected", testCollection.toString());
-		testCollection.Sort("AN");
+		testCollection.sort("AN");
 		Assert.assertEquals("expected", testCollection.toString());
-		testCollection.Sort("PT");
+		testCollection.sort("PT");
 		Assert.assertEquals("expected", testCollection.toString());
-		testCollection.Sort("ST");
+		testCollection.sort("ST");
 		Assert.assertEquals("expected", testCollection.toString());
-		testCollection.Sort("CH");
+		testCollection.sort("CH");
 		Assert.assertEquals("expected", testCollection.toString());
-		testCollection.Sort("R");
+		testCollection.sort("R");
 		Assert.assertFalse("expected".equals(testCollection.toString()));
 	}
 

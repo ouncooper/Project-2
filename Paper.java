@@ -34,8 +34,13 @@ public abstract class Paper implements Comparable<Paper>/*, Comparator<Paper>*/
 		switch (sortCriteria)
 		{
 		case "BI":
-			sortCriteria = "AN";
-			compareTo(otherPaper);
+			String thisSortString = null;
+			String otherSortString = null;
+			String[] thisInformation = this.toString().split(" // ");
+			String[] otherInformation = otherPaper.toString().split(" // ");
+			thisSortString += thisInformation[1] + " " + thisInformation[2] + " " + thisInformation[3] + " " + thisInformation[4];
+			otherSortString += otherInformation[1] + " " + otherInformation[2] + " " + otherInformation[3] + " " + otherInformation[4];
+			offset = thisSortString.compareToIgnoreCase(otherSortString);
 			break;
 		case "AN":
 			offset = compare(otherPaper, 1);

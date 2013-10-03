@@ -107,7 +107,7 @@ public class PaperCollection {
 	 * @param searchCriteria The search query
 	 * @return A string containing the results of the search
 	 */
-	public int search(String searchTitle)
+	public Paper search(String searchTitle)
 	{
 		//Have to be certain the list is sorted.
 		sort("PT");
@@ -117,8 +117,8 @@ public class PaperCollection {
 		
 		// While there are elements in the range [left,.., right].
 		while( right - left + 1 > 0) {
-			// Pick the middle point of the range [left, ... , right].
 			
+			// Pick the middle point of the range [left, ... , right].
 			int middleIndex = ( left + right ) / 2;
 			String middleElement = paperCollection.get(middleIndex).toString().split(" // ")[2];
 			int comparisonValue = middleElement.compareTo(searchTitle);
@@ -130,12 +130,12 @@ public class PaperCollection {
 				right = middleIndex - 1;				
 			}
 			else {
-				return middleIndex;
+				return paperCollection.get(middleIndex);
 			}
 		}
 		
 		// If the element was not found.
-		return -1;	
+		return null;	
 	}
 
 	/**

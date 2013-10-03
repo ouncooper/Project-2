@@ -72,11 +72,11 @@ public class Driver
 			case "S":
 				System.out.println("Please input a title to search for: ");
 				String title = inputReader.readLine();
-				int index = list.search(title);
-				if (index == -1)
+				Paper searchedPaper = list.search(title);
+				if (searchedPaper == null)
 					System.out.println("The title " + title + " was not found.");
 				else
-					System.out.println("The title " + title + " was found at index " + index + ".");
+					System.out.println(searchedPaper.toString().replace(" // null", "").replace(" // ", "\n") + "\n");
 				break;
 			case "E":
 				//This is the exit command, so nothing will be done
