@@ -23,8 +23,13 @@ public class Driver
 	public static void main(String[] args) throws IOException
 	{
 		PaperCollection list = null;
+		
+		BufferedReader inputReader = new BufferedReader(new InputStreamReader(System.in));
+		System.out.print("Please input the papers.txt filepath: ");
+		String filepath = inputReader.readLine();
+		
 		try {
-			list = new PaperCollection("/Users/7thace/desktop/papers.txt");
+			list = new PaperCollection(filepath + "/papers.txt");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -32,7 +37,6 @@ public class Driver
 		String command = null;
 		
 		do {
-			BufferedReader inputReader = new BufferedReader(new InputStreamReader(System.in));
 			System.out.print("Please input a command: ");
 			command = inputReader.readLine();
 			
