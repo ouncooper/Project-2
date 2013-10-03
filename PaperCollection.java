@@ -111,6 +111,7 @@ public class PaperCollection {
 	{
 		//Have to be certain the list is sorted.
 		sort("PT");
+		//Code from lab4.
 		int left  = 0;
 		int right = paperCollection.size() - 1;
 		

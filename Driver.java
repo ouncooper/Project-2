@@ -18,7 +18,7 @@ public class Driver
 	 * Prompts the user for a filepath on the command line,
 	 * then creates a PaperCollection that stores the papers read in.
 	 * @param args Command line arguments.
-	 * @throws IOException 
+	 * @throws IOException Error in I/O.
 	 */
 	public static void main(String[] args) throws IOException
 	{
