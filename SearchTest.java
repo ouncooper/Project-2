@@ -1,22 +1,28 @@
 import static org.junit.Assert.*;
-
 import java.io.IOException;
-
 import junit.framework.Assert;
 
 import org.junit.Test;
 
 
-public class SearchTest {
+public class PaperCollectionSearchTest {
 	
+	@Test
 	public void test() throws IOException {
 		//Make a collection from a file
 		PaperCollection testCollection = new PaperCollection("papers.txt");
 		
 		//Test to see if you can find the right information
-		Assert.assertEquals("Conference Paper\nAuthorLastName1, AuthorFirstName1; AuthorLastName2, AuthorFirstName2\nPaperName1\nSerialTitle1\n137-144\nJuly 2012\nhttp://dx.doi.org/10.7551/978-0-262-31050-5-ch020",testCollection.search("PaperName1"));
-		Assert.assertEquals("Journal Article\nAuthorLastName7, AuthorFirstName7; AuthorLastName8, AuthorFirstName8\nPaperName4\nSerialTitle4\n30(2):115-634\nOctober 2010",testCollection.search("SerialTitle4"));
 		
+		//This paper should be in the 0th position in the arrayList if sorted by title (necessary for binary search)
+		Assert.assertEquals(0,testCollection.search("Extending Adaptive Fuzzy Behavior Hierarchies to Multiple Levels of Composite Behaviors"));
+		//This paper should be in the 1st position in the arrayList if sorted by title (necessary for binary search)
+		Assert.assertEquals(1,testCollection.search("Mexual Selection, Resource Distribution, and Population Size in Synthetic Sympatric Speciation"));
+		//This paper should be in the 2nd position in the arrayList if sorted by title (necessary for binary search)
+		Assert.assertEquals(2,testCollection.search("Prextending Adaptive Fuzzy Behavior Hierarchies to Multiple Levels of Composite Behaviors"));
+		//This paper should be in the 3rd position in the arrayList if sorted by title (necessary for binary search)
+		Assert.assertEquals(3,testCollection.search("Sexual Selection, Resource Distribution, and Population Size in Synthetic Sympatric Speciation"));
+				
 	}
 
 }
